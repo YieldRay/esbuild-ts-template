@@ -1,0 +1,12 @@
+{
+    "name": "esbuild-ts-template",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "main": "dist/main.js",
+    "scripts": {
+        "dev": "esbuild src/main.ts --watch --bundle --outdir=dist --format=esm --sourcemap --servedir=./ --inject:./src/hot-reloading.ts",
+        "build": "rm -rf dist && esbuild src/main.ts --bundle --public-path=./public --outdir=dist --format=esm --minify --sourcemap",
+        "tar": "tar -zcvf dist/dist.tar.gz ./index.html ./dist"
+    }
+}
